@@ -1,0 +1,39 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //2-不允许重复声明
+
+        var a  = 1;
+        
+        // let a = 2;
+        console.log(a)        
+
+        //3- 变量提升没有
+        // 暂存性死区
+        // console.log(myname)
+        let myname ="kerwin"
+
+        function test(){
+            // console.log(myname)
+            let myname = "tiechui"
+        }
+
+        test()
+
+        //4-不与顶层对象挂钩
+
+        let myage =100
+
+        console.log(window.myage)
+    </script>   
+</body>
+</html>

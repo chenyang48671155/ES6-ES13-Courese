@@ -1,0 +1,43 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj = {
+        //     name:"kerwin"
+        // }
+
+        // Reflect.set(obj,"age",100)
+
+        // console.log(Reflect.get(obj,"name"))
+
+        let s = new Set()
+
+        let proxy = new Proxy(s, {
+            get(target, key) {
+                //判断如果式方法，修正this指向
+                //target[key]
+                let value = Reflect.get(target,key)
+                if (value instanceof Function) {
+                    //call apply bind
+                    return value.bind(target)
+                }
+                return value
+            },
+            set(target, key, value) {
+                Reflect.set(...arguments)
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let keys = {
+            name: Symbol("name"),
+            age: Symbol("age"),
+            location: Symbol("location"),
+            test: Symbol("test")
+        }
+        let obj = {
+            [keys.name]: "kerwin",
+            [keys.age]: 100,
+            [keys.location]: "dalian",
+            [keys.test]() {
+                console.log("test")
+            }
+        }
+
+        console.log(obj[keys.name])
+        // obj[keys.test]()
+
+
+
+        obj.name = "aaaaaaa"
+
+        console.log(obj)
+
+
+        //for in
+
+        // for(let i in obj){
+        //     console.log(i)
+        // }
+
+        // console.log(Object.getOwnPropertySymbols(obj))
+
+
+        Reflect.ownKeys(obj).forEach(item=>{
+            console.log(item,obj[item])
+        })
+    </script>
+</body>
+
+</html>

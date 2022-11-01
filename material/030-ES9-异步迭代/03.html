@@ -1,0 +1,48 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+        function ajax(data){
+            return new Promise(resolve=>{
+                resolve(data)
+            })
+        }
+        //异步生成器
+        async function *gen(){
+            yield ajax(111)
+            yield ajax(222)
+        }
+
+        let g = gen() //g就是一个异步遍历器
+        
+        // g.next().then(res=>{
+        //     console.log(res)
+        //     return g.next()
+        // }).then(res=>{
+        //     console.log(res)
+        //     return g.next()
+        // }).then(res=>{
+        //     console.log(res)
+        // })
+
+        async function test(){
+           let list = [g.next(),g.next(),g.next()]
+
+           for await(let i of list){
+               console.log(i)
+           }
+        }
+
+        test()
+    </script>
+</body>
+</html>

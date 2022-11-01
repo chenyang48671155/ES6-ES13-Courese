@@ -1,0 +1,38 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       console.log(2**53)
+
+       let num1 = 123;
+       let num2 = 123n
+
+       console.log(num1,num2)
+
+       console.log(num1==num2)
+       console.log(BigInt(num1)===num2)
+
+       console.log(num2>100)
+       console.log(num2<200)
+
+       console.log(num2+BigInt(2))
+
+       //BigInt 函数
+
+       console.log(BigInt(2))
+
+       console.log(BigInt(2**53))
+       console.log(BigInt(2**53)+BigInt(1))
+       console.log(BigInt(2**53)+BigInt(2))
+       console.log(BigInt(2**53)+BigInt(3))
+    </script>
+</body>
+</html>

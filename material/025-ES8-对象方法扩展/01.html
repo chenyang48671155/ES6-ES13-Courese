@@ -1,0 +1,35 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name:"kerwin",
+            age:100
+        }
+
+        // console.log(Object.keys(obj))
+
+        // ------------------------------------------
+
+        console.log(Object.values(obj))
+        console.log(Object.entries(obj))
+
+        let m = new Map(Object.entries(obj))
+
+        console.log(m)
+
+        console.log(Object.getOwnPropertyDescriptors(obj))
+    </script>
+</body>
+
+</html>

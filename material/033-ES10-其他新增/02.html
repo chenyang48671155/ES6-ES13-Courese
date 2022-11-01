@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Promise.race
+
+        let pro1 = new Promise(function(resolve,reject){
+            //执行器函数
+            setTimeout(()=>{
+                resolve("成功的结果")
+            },30000)
+        })
+        let pro2 = new Promise(function(resolve,reject){
+            //执行器函数
+            setTimeout(()=>{
+                reject()
+            },2000)
+        })
+        // let pro3 = new Promise(function(resolve,reject){
+        //     //执行器函数
+        //     setTimeout(()=>{
+        //         resolve(3000)
+        //     },3000)
+        // })
+
+        async function test(){
+            try {
+                await Promise.race([pro1,pro2])
+            } catch  {
+                console.log("超时")
+            }
+        }
+
+        test()
+    </script>
+</body>
+</html>

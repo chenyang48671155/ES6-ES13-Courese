@@ -1,0 +1,34 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "kerwin"
+
+        console.log(str.padStart(10,'x'))
+        console.log(str.padEnd(10,'x'))
+        console.log(str.padStart(5,'x'))
+        console.log(str.padEnd(5,'x'))
+
+
+        // 01 02 03 --- 12 
+
+        let list = []
+
+        for(let i=1;i<13;i++){
+            // list.push(String(i).padStart(2,"0"))
+            list.push((i+"").padStart(2,"0"))
+        }
+    </script>
+</body>
+
+</html>

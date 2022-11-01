@@ -1,0 +1,35 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getData() {
+            let res = {
+                code: 200,
+                data: {
+                    list: ["aaa", "bbb", "ccc"]
+                }
+            }
+
+            test(res)
+        }
+
+        function test({code,data:{list}}){
+            console.log(code,list)
+            // let {}
+        }
+
+        getData()
+    </script>
+</body>
+
+</html>

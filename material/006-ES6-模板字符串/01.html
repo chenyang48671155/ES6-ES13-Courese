@@ -1,0 +1,53 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        // let name ="tiechui"
+        // // let oli = "<li>\
+        // // <b>"+name+"</b>\
+        // // </li>"
+        // let oli = `<li>
+        //     <b>${name}</b>
+        // </li>`
+
+        // console.log(oli)
+        function test(){
+            return "函数返回结果"
+        }
+
+        let arr =["tiechui","kerwin","gangdan"]
+
+        let newlist = arr.map(function(item,index){
+            return `<li class="${index===0?'active':''}">
+                <b>${item}</b>
+                ${test()}
+            </li>`
+        })
+        console.log(newlist)
+
+        let oul = document.querySelector("ul")
+        oul.innerHTML = newlist.join("")
+
+
+
+
+        
+    </script>
+</body>
+</html>

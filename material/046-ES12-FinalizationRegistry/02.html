@@ -1,0 +1,40 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="like">like</button>
+    <script>
+        //WeakMap()
+        let registry = new FinalizationRegistry(data=>{
+            console.log("销毁了",data)
+        })
+
+
+        let wmap = new WeakMap()
+        let like = new WeakRef(document.getElementById("like"))
+
+        wmap.set(like.deref(),{click:0})
+
+        like.deref().onclick = function(){
+            let times = wmap.get(like.deref())
+            times.click++
+        }
+
+        setTimeout(()=>{
+            //
+            registry.register(like.deref(),wmap.get(like.deref()).click)
+            document.body.removeChild(like.deref())
+        },3000)
+
+
+        
+    </script>
+</body>
+</html>

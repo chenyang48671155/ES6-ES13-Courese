@@ -1,0 +1,48 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let obj = {
+           name:"kerwin",
+           age:100,
+
+           location:{
+                province:"辽宁",
+                city:"大连"
+           },
+
+           get city(){
+            return this.location.city
+           },
+
+           set city(value){
+            this.location.city  = value
+           },
+
+           get uppername(){
+               console.log("get")
+               return this.name.substring(0,1).toUpperCase()+this.name.substring(1)
+           },
+
+           set uppername(value){
+            //    console.log("set",value)
+            this.name = value
+           }
+       }
+       let obj1 = {}
+    //    Object.assign(obj1,obj)
+
+       Object.defineProperties(obj1,Object.getOwnPropertyDescriptors(obj))
+    </script>
+
+    
+</body>
+</html>

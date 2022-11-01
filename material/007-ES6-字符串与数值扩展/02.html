@@ -1,0 +1,74 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1- 二进制八进制得写法
+
+        // let num1 = 100;
+        // let num2 = 0x100;
+        // let num3 = 0b100;
+        // let num4 = 0o100;
+        // console.log(num1)
+        // console.log(num2)
+        // console.log(num3)
+        // console.log(num4)
+
+        //2. Number.isFinite Number.isNaN
+
+        // let num1 = Number.isFinite(100) //true
+        // let num2 = Number.isFinite(100/0) //false
+        // let num3 = Number.isFinite(Infinity) // false
+        // let num4 = Number.isFinite("100") //false
+        // console.log(num1)
+        // console.log(num2)
+        // console.log(num3)
+        // console.log(num4)
+
+        // let num1 = Number.isNaN(100) // false
+        // let num2 = Number.isNaN(NaN) //true
+        // let num3 = Number.isNaN("kerwin") //false
+        // let num4 = Number.isNaN("100") // false
+        // console.log(num1)
+        // console.log(num2)
+        // console.log(num3)
+        // console.log(num4)
+
+        // let num1 = Number.isInteger(100) // true
+        // let num2 = Number.isInteger(100.0) //true
+        // let num3 = Number.isInteger("kerwin") //false
+        // let num4 = Number.isInteger("100") // false
+
+        // console.log(num1)
+        // console.log(num2)
+        // console.log(num3)
+        // console.log(num4)
+
+
+        //3 -极小常量
+
+        // function isEqual(x,y){
+        //     return Math.abs(x-y)<Number.EPSILON
+        // }
+
+        // // console.log(isEqual(5,6))
+        // console.log(isEqual(0.1+0.2,0.3))
+
+
+        console.log(Math.trunc(1.2)) //1
+        console.log(Math.trunc(1.8)) // 1
+        console.log(Math.trunc(-1.8)) //-1
+        console.log(Math.trunc(-1.2)) //-1
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let s1 = new Set([1,2,3,2,3,4])
+
+        console.log(s1)
+        console.log([...s1])
+        console.log(Array.from(s1))
+
+
+        let s2 = new Set()
+        s2.add(11)
+        s2.add(22)
+        s2.add(22)
+        s2.add(33)
+        console.log(s2)
+
+
+        for(let i of s1){
+            // console.log(i)
+        }
+
+        // set实例属性和方法
+
+        console.log(s1.size)
+
+        //add
+
+        s1.add(5).add(6)
+        console.log(s1)
+
+        // has
+
+        console.log(s1.has(5))
+
+
+        // delete
+        s1.delete(5)
+
+        console.log(s1.has(5))
+
+        s1.clear()
+
+        //for of 
+        for(let i of s2){
+            console.log(i)
+        }
+        for(let i of s2.keys()){
+            console.log(i)
+        }
+        for(let i of s2.values()){
+            console.log(i)
+        }
+        for(let i of s2.entries()){
+            console.log(i)
+        }
+
+        let arr = ["aa","bb","cc"]
+
+        for(let [index,item] of arr.entries()){
+            console.log(index,item)
+        }
+
+
+        s2.forEach((item,index)=>{
+            console.log(item,index)
+        })
+
+
+
+        let list = [1,2,2,"kerwin","kerwin",[1,2],[3,4],[1,2],{name:"kerwin"},{age:100},{name:"kerwin"},undefined,undefined,NaN,NaN]
+
+
+        function uni(arr){
+            let res = new Set()
+            return arr.filter((item)=>{
+                //判断 has trun false
+                // 没有 return true
+                let id = JSON.stringify(item)
+                if(res.has(id)){
+                    return false
+                }else{
+                    res.add(id)
+                    return true
+                }
+            })
+        }
+
+        console.log(uni(list))
+    </script>
+</body>
+
+</html>

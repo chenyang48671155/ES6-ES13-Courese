@@ -1,0 +1,33 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = new Set()
+
+        let proxy = new Proxy(s,{
+            get(target,key){
+                //判断如果式方法，修正this指向
+                let value = target[key]
+                if(value instanceof Function){
+                    //call apply bind
+                    return value.bind(target)
+                }
+                return value
+            },
+            set(target,key,value){
+                target[key] = value
+                console.log("set")
+            }
+        })
+
+    </script>
+</body>
+</html>

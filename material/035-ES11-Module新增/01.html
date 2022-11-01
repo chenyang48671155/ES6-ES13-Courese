@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="login">登录</button>
+    <script type="module">
+        
+        function login(){
+            return "普通"
+        }
+
+        let obtn = document.querySelector("#login")
+        obtn.onclick = function(){
+            let role = login()
+            console.log(role)
+
+            render(role)
+        }
+
+        async function render(role){
+            if(role==="管理员"){
+                //加载1.js
+                let res1 =await import("./1.js") //返回值promise对象
+
+                console.log(res1)
+            }else{
+                //加载2.js
+                let res2 = await import("./2.js")
+                console.log(res2)
+            }
+        }
+
+        // list = ["a.vue","b.vue","c.vue"]
+
+        /*
+            list.forEach(item=>{
+
+                import(item)
+            })
+        
+        */
+    </script>
+</body>
+</html>

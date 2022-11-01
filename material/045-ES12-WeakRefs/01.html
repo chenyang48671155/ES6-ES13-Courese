@@ -1,0 +1,58 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+      //ES6 Set Map
+
+      //ES6 WeakSet WeakMap ES12 WeakRef
+
+      let obj = {
+          name:"kerwin"
+      }
+
+    //   let obj1 = obj
+
+    //   obj = null     
+    //   let s1= new Set()
+    //   s1.add(obj)
+
+    //   s1.add("aaaaa")
+
+    //   obj = null
+
+    //   for(let i of s1){
+    //       console.log(i)
+    //   }
+
+      /*
+        weakset:
+
+        1. 只能复杂类型
+        2. 不存在引用计数+1
+        3. size ,for不能用了
+      */
+      let s1= new WeakSet()
+      s1.add(obj)
+
+    //   s1.add("aaaaa")
+
+      obj = null
+
+    //   for(let i of s1){
+    //       console.log(i)
+    //   }
+    </script>
+</body>
+
+</html>

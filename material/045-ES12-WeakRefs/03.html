@@ -1,0 +1,47 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="like">like</button>
+    <script>
+        //WeakMap()
+
+        // let wmap = new WeakMap()
+        // let like = document.getElementById("like")
+
+        // wmap.set(like,{click:0})
+
+        // like.onclick = function(){
+        //     let times = wmap.get(like)
+        //     times.click++
+        // }
+
+        // setTimeout(()=>{
+        //     document.body.removeChild(like)
+        //     //like =null
+        //     console.log(like)
+        // },2000)
+
+
+        let wmap = new WeakMap()
+
+        wmap.set(document.getElementById("like"),{click:0})
+
+        document.getElementById("like").addEventListener("click",function(){
+            let times = wmap.get(document.getElementById("like"))
+            times.click++
+        },false)
+
+        setTimeout(()=>{
+            document.body.removeChild(document.getElementById("like"))
+        },2000)
+    </script>
+</body>
+</html>

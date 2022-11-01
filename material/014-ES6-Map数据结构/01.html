@@ -1,0 +1,79 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let m1 = new Map([
+            ["name","kerwin"],
+            ["age",100],
+            [{a:1},"大连"]
+        ])
+
+        console.log(m1)
+
+        let o = {a:1}
+        let m2 = new Map()
+        m2.set("name","kerwin")
+        m2.set("age",100)
+        m2.set(o,"大连")
+
+        console.log(m2)
+
+        for(let i of m2){
+            console.log(i)
+        }
+
+        console.log([...m2])
+
+        //set get has delete size clear
+
+        console.log(m2.get(o))
+
+        console.log(m2.has("age"))
+
+        m2.delete("age")
+
+        console.log(m2.has("age"))
+
+        console.log(m2.size)
+
+
+        m2.clear()
+        console.log(m2)
+
+
+        // keys() values() entries()  for of
+        // foreach
+
+        // for(let i of m1.keys()){
+        //     console.log(i)
+        // }
+
+        for(let i of m1.values()){
+            console.log(i)
+        }
+
+        for(let [index,item] of m1.entries()){
+            console.log(index,item)
+        }
+        for(let [index,item] of m1){
+            console.log(index,item)
+        }
+
+
+        m1.forEach((item,index)=>{
+            console.log(item,index)
+        })
+    </script>
+</body>
+
+</html>

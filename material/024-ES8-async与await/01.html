@@ -1,0 +1,39 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function test(){
+            console.log("test")
+            // return "sucess-11111111"
+
+            return new Promise((resolve,reject)=>{
+                // resolve("data-11111")
+                reject("err-22222")
+            })
+        }
+
+        let res = test()
+        // console.log(res)
+        res.then(res=>{
+            console.log("success",res)
+        }).catch(err=>{
+            console.log("err",err)
+        })
+        /*
+          1. async 返回值是非promise对象， fulfiled， then指定
+          2. async 返回的是 promsie 对象， fulfilled vs rejected ,then vs catch
+        */
+    </script>
+</body>
+
+</html>

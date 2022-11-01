@@ -1,0 +1,37 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // .then.then 链式调用
+
+        let pro = new Promise(function(resolve,reject){
+            //执行器函数
+            setTimeout(()=>{
+                resolve(1000)
+                // reject("no 1111")
+            },1000)
+        })
+
+
+        pro.then((res)=>{
+            console.log("奖金1",res)
+            //如果return 非promise类型，pending-fulfilled
+            //如果return promise类型，根据这个新的promise对象的结果，决定pending-fulfilled pending-rejected
+            return res
+        }).then((res)=>{
+            console.log("奖金2",res)
+        }).catch((err)=>{
+            console.log("没有",err)
+        })
+    </script>
+</body>
+</html>

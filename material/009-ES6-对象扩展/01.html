@@ -1,0 +1,99 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <script>
+      //1-对象简写
+      // let name = "moduleA"
+      // let obj = {
+      //   name, // name:name
+      //   test1(){
+
+      //   },
+      //   test2(){
+
+      //   }
+      // }
+
+      //2 对象属性 表达式
+      // let name = "a"
+
+      // let obj = {
+      //   [name+"bc"]:"kerwin"
+      // }
+      // console.log(obj)
+
+      // let name = "moduleB"
+      // let obj = {
+      //   name, // name:name
+      //   [name+"test1"](){
+
+      //   },
+      //   [name+"test2"](){
+
+      //   }
+      // }
+
+      // console.log(obj)
+
+      //3-扩展运算符... ES2018
+
+      // let obj1 = {
+      //   name:"kerwin"
+      // }
+
+      // let obj1 = {
+      //   ...obj
+      // }
+      
+      // let obj2 = {
+      //   age:100
+      // }
+
+      // let obj3 = {
+      //   name:"tiechui"
+      // }
+      // obj1.name = "tiechui"
+      // console.log({...obj1,...obj2,...obj3})
+
+      //4. Object.assign
+      let obj = {}
+      let obj1 = {
+        name:"kerwin"
+      }
+      
+      let obj2 = {
+        age:100
+      }
+
+      let obj3 = {
+        name:"tiechui"
+      }
+
+      console.log(Object.assign(obj,obj1,obj2,obj3))
+
+      //Object.is
+
+      // ==
+      // ===
+
+      console.log(Object.is(5,5));
+      console.log(Object.is(5,"5"));
+      console.log(Object.is({},{}));
+      console.log(Object.is(parseInt("kerwin"),NaN));
+
+      console.log(Object.is(+0,-0))
+      console.log(+0===-0)
+  </script>
+</body>
+
+</html>

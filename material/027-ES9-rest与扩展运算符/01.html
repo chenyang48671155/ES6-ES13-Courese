@@ -1,0 +1,77 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name:"kerwin",
+            age:100,
+            location:"dalian"
+        }
+        let {name,...other} = obj
+
+        console.log(name,other)
+
+
+        function test({name,...other}){
+            console.log(name,other)
+        }
+
+        test(obj)
+
+
+        //...
+        let obj1 = {
+            name:"tiechui",
+            location:"dalian"
+        }
+
+        let obj2 = {
+            name:"xiaoming",
+            age:18
+        }
+
+        //Object.assign
+
+
+        let obj3 = {...obj1,...obj2}
+
+        console.log(obj3)
+
+
+        function ajax(options){
+            const defaultOptions = {
+                methods:"get",
+                async:true
+            }
+            options = {...defaultOptions,...options}
+
+            console.log(options)
+        }
+
+        ajax({
+            url:"/api",
+            methods:"post"
+        })
+
+        let obj5 = {
+            name:"kerwin",
+            age:100
+        }
+
+        let obj6 = {...obj5}
+
+        console.log(obj6)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            static myname = "person类的名字"
+            static mymethod = function(){
+                // console.log("mythod",this.age)
+            }
+
+            constructor(name,age){
+                this.name = name
+                this.age =age
+            }
+
+            say(){
+                console.log(this.name,this.age)
+            }
+        }
+
+
+        // Person.myname = "person类的名字"
+        // Person.mymethod = function(){
+        //     console.log("mymethod")
+        // }
+
+        let obj = new Person("kerwin",100)
+
+        console.log(Person.myname)
+        Person.mymethod()
+    </script>
+</body>
+</html>

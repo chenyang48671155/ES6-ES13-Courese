@@ -1,0 +1,27 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "今天是2022-11-10"
+        let reg = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/
+
+        //exec
+        let res = reg.exec(str)
+        // console.log(res)
+        let {year,month,day }= res.groups
+
+        console.log(year,month,day)
+    </script>
+</body>
+
+</html>

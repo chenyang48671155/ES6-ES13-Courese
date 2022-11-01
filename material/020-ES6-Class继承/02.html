@@ -1,0 +1,77 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <div class="box2">
+        <h1></h1>
+        <img src="" alt="" style="width:100px;">
+        <ul></ul>
+    </div>
+    <script>
+        var data1 = {
+            title: "体育",
+            list: ["体育-1", "体育-2", "体育-3"]
+        }
+
+        var data2 = {
+            title: "综艺",
+            url: "https://pic.maizuo.com/usr/movie/5011ee407fb407d47e333a3935ec33d1.jpg?x-oss-process=image/quality,Q_70",
+            list: ["综艺-1", "综艺-2", "综艺3"]
+        }
+
+        class CreatBox{
+            constructor(select,data){
+                this.ele = document.querySelector(select)
+                this.title = data.title
+                this.list = data.list
+                this.render()
+            }
+
+
+            render(){
+                let oh1 = this.ele.querySelector("h1")
+                let oul = this.ele.querySelector("ul")
+
+                oh1.innerHTML = this.title
+                oul.innerHTML = this.list.map(item=>
+                    `<li>${item}</li>`
+                ).join("")
+            }
+        }
+        new CreatBox(".box1",data1)
+
+
+        class CreateImgBox extends CreatBox{
+            constructor(select,data){
+                super(select,data)
+                this.imgUrl = data.url
+
+                this.render()
+            }
+
+            render(){
+                // console.log("111111",this.imgUrl)
+                super.render()
+                let oimg = this.ele.querySelector("img")
+                oimg.src=  this.imgUrl
+            }
+        }
+
+        new CreateImgBox(".box2",data2)
+    </script>
+</body>
+
+</html>

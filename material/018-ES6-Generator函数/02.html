@@ -1,0 +1,41 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function *gen(){
+            // console.log(11)
+            yield "aaa"//产出
+            // console.log(22)
+            yield "bbb"
+            // console.log(33)
+            return "ccc"
+        }
+
+        let g = gen()
+
+        let res1 = g.next()
+        console.log(res1)
+        let res2 = g.next()
+        console.log(res2)
+
+        let res3 = g.next()
+
+        console.log(res3)
+
+        // for(let i of g){
+        //     console.log(i)
+        // }
+    </script>
+</body>
+
+</html>

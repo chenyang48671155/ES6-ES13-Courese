@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [["name","kerwin"],["age",100]]
+
+        console.log(Object.fromEntries(arr))
+
+        //用处1
+        let m = new Map()
+        m.set("name","tiechui")
+        m.set("age",100)
+
+        console.log(Object.fromEntries(m))
+
+        //用处2
+
+        let str = "name=xiaoming&age=18"
+
+        let seatchParams = new URLSearchParams(str)
+
+        console.log(Object.fromEntries(seatchParams))
+
+
+        //用处3
+        let obj = {
+            "A":["A1","A2","A3"],
+            "B":["B1","B1"],
+            "C":["C1"]
+        }
+
+        // console.log(obj.map)
+        let myarr = Object.entries(obj)
+        // console.log(myarr)
+        let mynewarr = myarr.map(([key,value])=>
+            [key,value.length]
+        )
+
+        console.log(Object.fromEntries(mynewarr))
+    </script>
+</body>
+</html>

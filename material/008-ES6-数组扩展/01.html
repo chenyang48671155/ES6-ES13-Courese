@@ -1,0 +1,124 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1111</li>
+    <li>1111</li>
+    <li>1111</li>
+    <li>1111</li>
+  </ul>
+  <script>
+      //1- ...展开
+      // let arr = [1,2,3]
+
+      // let arr2 = arr.concat()
+      // let arr2 = [...arr]
+      // arr2.pop()
+      // console.log(arr,arr2)
+      // let arr2 = [4,5,6]
+
+      // console.log([...arr,...arr2])
+
+      // let myarr = [1,2,3,4,5,6,7,8]
+
+      // let [a,b,...c] = myarr
+
+      // console.log(a,b,c)
+
+      //2 Array.from
+
+      //arguments
+
+      // function test(){
+      //   // console.log(arguments.filter)
+      //   console.log(Array.from(arguments))
+      // }
+      // test(1,2,3,4)
+
+      // let olis = document.querySelectorAll("li")
+      // // console.log(olis)
+      // Array.from(olis).map(function(){
+
+      // })
+
+      // 3. Array.of
+
+      // let arr = [1,2,3]
+      // let arr1 = Array(3)
+      // let arr2 = Array.of(3)
+      // console.log(arr1,arr2)
+
+
+      //4. find findIndex()
+
+      // let arr = [11,12,13,14,15]
+
+      // // let res = arr.find(function(item){
+      // //   return item>13
+      // // })
+      // let res = arr.findIndex(function(item){
+      //   return item>13
+      // })
+      // let res = arr.findLast(function(item){
+      //   return item>13
+      // })
+      // let res = arr.findLastIndex(function(item){
+      //   return item>13
+      // })
+      // console.log(res)
+
+      //findLast findLastIndex() ES2022
+
+      // fill
+      // let arr = new Array(3).fill("kerwin")
+
+      // console.log(arr)
+
+      // let arr1 = [11,22,33]
+
+      // console.log(arr1.fill("kerwin",1,2))
+
+
+      // flat() flatMap()
+      // lodash
+
+      // let arr = [1,2,3,[4,5,6]]
+
+      // let arr1 = arr.flat()
+      // console.log(arr,arr1)
+
+      // let arr = [
+      //   ["安庆","安阳","鞍山"],
+      //   ["北京","保定","包头"]
+      // ]
+
+      // console.log(arr.flat())
+
+      let arr = [
+        {
+          name:"A",
+          list:["安庆","安阳","鞍山"]
+        },
+        {
+          name:"B",
+          list:["北京","保定","包头"]
+        }
+      ]
+      let res = arr.flatMap(function(item){
+        return item.list
+      })
+      console.log(res)
+  </script>
+</body>
+
+</html>

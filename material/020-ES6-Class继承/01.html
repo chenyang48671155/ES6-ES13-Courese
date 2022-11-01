@@ -1,0 +1,55 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       class Person {
+            static myname = "person类的名字"
+            static mymethod = function(){
+                console.log("mythod")
+            }
+
+            constructor(name,age){
+                this.name = name
+                this.age =age
+            }
+
+            say(){
+                console.log(this.name,this.age)
+            }
+        }
+
+
+        class Student extends Person{
+            static myname = "Student类的名字"
+            static mymethod = function(){
+                console.log("Student- mythod",this.myname)
+            }
+
+            constructor(name,age,score){   
+                super(name,age)
+                this.score = score
+            }
+
+            say(){
+                super.say()
+
+                console.log(this.score)
+            }
+
+            getScore(){
+                console.log(this.score)
+            }
+        }
+
+        let obj = new Student("kerwin",100,150)
+    </script>
+</body>
+</html>

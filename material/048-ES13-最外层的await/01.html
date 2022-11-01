@@ -1,0 +1,41 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script type="module">
+       function ajax(){
+           return new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve("data-11111")
+            },2000)
+           })
+       }
+
+       let res = await ajax()
+
+       console.log(res)
+    </script> -->
+
+    <!-- <script type="module">
+        console.log("开始")
+        import moduleA from './1.js'
+        console.log(moduleA)
+    </script> -->
+
+    <script type="module">
+        console.log("开始")
+        let moduleA  = await import("./1.js")
+        console.log(moduleA)
+    </script>
+</body>
+
+</html>

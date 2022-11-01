@@ -1,0 +1,80 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+    <script>
+        //对象 非线性
+
+        // let obj = {
+        //     0:"kerwin",
+        //     1:"teichui",
+        //     2:"ganger",
+        //     length:3,
+        //     [Symbol.iterator]:Array.prototype[Symbol.iterator]
+        // }
+
+        // for(let i of obj){
+        //     console.log(i)
+        // } 
+
+
+        let obj2 = {
+            code:200,
+            name:"obj2",
+            list:["kerwin","tiechui","gangdan"],
+            //迭代器
+
+            [Symbol.iterator](){
+                let index = 0
+                // console.log(this.list)
+                return {
+                    next:()=>{
+                        // console.log(this)
+                        return {
+                            value:this.list[index++],
+                            done:index===(this.list.length+1)?true:false}
+                    }
+                }
+            }
+        }
+
+        for(let i of obj2){
+            console.log(i)
+        } 
+
+        // let iter = obj2[Symbol.iterator]()
+
+        // console.log(iter)
+
+        // console.log(iter.next())
+        // console.log(iter.next())
+        // console.log(iter.next())
+        // console.log(iter.next())
+        //immutable.js
+
+
+        // ...解构赋值
+        // ...展开
+
+
+        console.log([...obj2])        
+
+
+        let oli = document.querySelectorAll("li")
+        console.log([...oli])
+        console.log(Array.from(oli))
+    </script>
+</body>
+</html>

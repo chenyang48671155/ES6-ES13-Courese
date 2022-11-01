@@ -1,0 +1,35 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    模糊搜索：
+    <input type="text" id="mysearch">
+    <script>
+        let osearch = document.querySelector("#mysearch")
+        // osearch.oninput = function(){
+        //     // console.log(this.value)
+        //     let _this = this
+        //     setTimeout(function(){
+        //         console.log(_this.value)
+        //         console.log(`发送${_this.value}到后端，获取列表数据`)
+        //     },1000)
+        // }
+
+        osearch.oninput = function(){
+            // console.log(this.value)
+            // let _this = this
+            setTimeout(()=>{
+                console.log(this.value)
+                console.log(`发送${this.value}到后端，获取列表数据`)
+            },1000)
+        }
+    </script>   
+</body>
+</html>

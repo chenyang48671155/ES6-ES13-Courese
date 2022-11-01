@@ -1,0 +1,36 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function timer(t){
+            return new Promise(resolve=>{
+                setTimeout(()=>{
+                    resolve("data-"+t)
+                },t)
+            })
+        }
+
+        async function test(){
+            let arr = [timer(1000),timer(2000),timer(3000)]
+
+            for(let item of arr){
+                console.log("start-",Date.now())
+                console.log(await item)
+                console.log("end-",Date.now())
+            }
+        }
+        test()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ajax(url, successcb, failcb) {
+            setTimeout(() => {
+                successcb("111111")
+            }, 1000)
+        }
+
+
+        ajax("/aaa", function (data) {
+            console.log(data)
+            ajax("/bbb", function (data) {
+                console.log(data)
+                ajax("/ccc", function (data) {
+                    console.log(data)
+                }, function () {
+
+                })
+            }, function () {
+
+            })
+        }, function () {
+
+        })
+    </script>
+</body>
+
+</html>

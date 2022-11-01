@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj = {
+        //     name:"kerwin"
+        // }
+        // let m1 = new WeakMap()
+        
+        // m1.set(obj,"111111")
+        // obj = null
+        // // console.log(m1)
+
+        let m1= new WeakMap();
+        (function(){
+            let arr1 = new Array(10*1024*1024)            
+            let arr2 = new Array(10*1024*1024)            
+            let arr3 = new Array(10*1024*1024)            
+            let arr4 = new Array(10*1024*1024)            
+            let arr5 = new Array(10*1024*1024)            
+            let arr6 = new Array(10*1024*1024)            
+            let arr7 = new Array(10*1024*1024)            
+            let arr8 = new Array(10*1024*1024)            
+            let arr9 = new Array(10*1024*1024)       
+            m1.set(arr1,"11")     
+            m1.set(arr2,"11")     
+            m1.set(arr3,"11")     
+            m1.set(arr4,"11")     
+            m1.set(arr5,"11")     
+            m1.set(arr6,"11")     
+            m1.set(arr7,"11")     
+            m1.set(arr8,"11")     
+            m1.set(arr9,"11")     
+        })()
+    </script>
+</body>
+</html>

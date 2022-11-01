@@ -1,0 +1,33 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getData(){
+            try{
+                console.log(aaaa)
+            }catch{
+                // console.log("err")
+                throw new Error("传入得参数不符合规则",{cause:{
+                    a:1,
+                    b:2,
+                    c:2
+                }})
+            }
+        }
+
+        try {
+            getData()
+        } catch (error) {
+            console.log(error,error.cause)
+        }
+    </script>
+</body>
+</html>

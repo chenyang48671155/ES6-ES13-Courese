@@ -1,0 +1,33 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    let obj = {
+    //        name:"kerwin",
+    //        age:100
+    //    }
+    //    let {age} = obj
+
+    //    console.log(age)
+        let code = "AAAA"
+        let res = {
+            code:200,
+            data:{
+                list:["aaa","bbb","ccc"]
+            }
+        }
+
+        let {data:{list:[x,y,z]},code:co,err="没有错误"} = res;
+
+        console.log(x,co,err)
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Promise.all
+
+        let pro1 = new Promise(function(resolve,reject){
+            //执行器函数
+            setTimeout(()=>{
+                resolve(1000)
+            },1000)
+        })
+        let pro2 = new Promise(function(resolve,reject){
+            //执行器函数
+            setTimeout(()=>{
+                resolve(2000)
+            },2000)
+        })
+        let pro3 = new Promise(function(resolve,reject){
+            //执行器函数
+            setTimeout(()=>{
+                resolve(3000)
+            },3000)
+        })
+
+
+        //showloading
+
+        Promise.all([pro1,pro2,pro3]).then(res=>{
+            //hideloading
+            console.log(res)
+        }).catch(err=>{
+            console.log(err)
+        })
+    </script>
+</body>
+</html>

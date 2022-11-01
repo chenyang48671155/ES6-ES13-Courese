@@ -1,0 +1,33 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function *gen(){
+            console.log(11)
+            yield //产出
+            console.log(22)
+            yield
+            console.log(33)
+        }
+
+        let g = gen()
+
+        g.next()
+
+        g.next()
+
+        g.next()
+    </script>
+</body>
+
+</html>

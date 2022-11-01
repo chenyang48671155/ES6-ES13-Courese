@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="1.js" type="module"></script> -->
+</head>
+<body>
+    <div></div>
+    <script type="module">
+
+        // 模块化
+        /*
+            异步加载
+            私密不漏
+            重名不怕
+            依赖不乱
+        */
+        //导入1.js中的方法
+        import obj1 from './1.js'
+        import obj2 from './2.js'
+        import obj3 from './3.js'
+        console.log(obj1.test,obj2.test)
+    </script>
+</body>
+</html>

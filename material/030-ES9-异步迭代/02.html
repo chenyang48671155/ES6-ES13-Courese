@@ -1,0 +1,52 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [1,2,3]
+
+        // // console.log()
+
+        // let i = arr[Symbol.iterator]()
+
+        // console.log(i.next())
+        // console.log(i.next())
+        // console.log(i.next())
+        // console.log(i.next())
+
+        // for(let i of arr){
+        //     console.log(i)
+        // }
+
+        function ajax(data){
+            return new Promise(resolve=>{
+                resolve(data)
+            })
+        }
+
+        function *gen(){
+            yield ajax(111)
+            yield ajax(222)
+        }
+
+        let g = gen()
+        // console.log(g.next())
+        // console.log(g.next())
+        // console.log(g.next())
+
+        g.next().value.then(res=>{
+            console.log(res)
+        })
+        g.next().value.then(res=>{
+            console.log(res)
+        })
+    </script>
+</body>
+</html>

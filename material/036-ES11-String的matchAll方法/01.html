@@ -1,0 +1,53 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let str = `
+            <ul>
+                <li>11111</li>    
+                <li>22222</li>    
+                <li>33333</li>    
+                <li>44444</li>    
+            </ul>
+       `
+
+       let reg = /<li>(?<content>.*)<\/li>/g
+
+    //    console.log(str.match(reg))
+
+      //捕获exec
+
+    //    console.log(reg.exec(str))
+    //    console.log(reg.exec(str))
+    //    console.log(reg.exec(str))
+    //    console.log(reg.exec(str))
+    //    console.log(reg.exec(str))
+
+    // let match = null
+    // let list = []
+    //  while(match = reg.exec(str)){
+    //      console.log(match.groups.content)
+    //      list.push(match.groups.content)
+    //  }
+
+    //  console.log(list)
+
+    // console.log(str.matchAll(reg))
+
+    let iobj = str.matchAll(reg)
+    // for(let i of iobj){
+    //     console.log(i.groups.content)
+    // }
+
+    console.log([...iobj])
+    </script>
+</body>
+</html>

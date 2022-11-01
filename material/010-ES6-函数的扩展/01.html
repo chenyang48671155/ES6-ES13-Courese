@@ -1,0 +1,42 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <script>
+      //1-参数默认值
+
+      function ajax(url,method="get",async=true){
+        console.log(url,method,async)
+      }
+
+      ajax("/aaa","get",true)
+      ajax("/bbb")
+      ajax("/ccc","post")
+
+
+      // 2-rest参数 剩余参数
+
+
+      function test(x,y,...data){
+        console.log(data)
+      }
+
+      test(1,2,3,4,5,6)
+
+
+      // 3. name属性
+
+      console.log(test.name)
+  </script>
+</body>
+
+</html>

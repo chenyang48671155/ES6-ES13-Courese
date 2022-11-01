@@ -1,0 +1,90 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let obj = {
+    //   name:"kerwin",
+    //   getName(){
+    //     console.log(this.name)
+    //   }
+    // }
+
+    // obj.name = "tiechui"
+
+
+    // obj.getName()
+    let s1 = Symbol() //生成了一个symbol类型数据
+    let s2 = Symbol()
+    //  console.log(typeof s1)
+
+    console.log(s1 === s2)
+
+    // 1. 不能进行运算
+
+    // console.log(s1>"aaaaa")
+
+
+    // 2. 显示调用toString()
+
+    console.log(s1.toString() + "aaaa")
+
+
+    // 3. 隐式转换boolean
+
+    if (s1) {
+      console.log("执行")
+    }
+
+
+    // let obj = {
+    //   name: "kerwin",
+    //   getName() {
+    //     console.log(this.name)
+    //   }
+    // }
+    
+    // let name = Symbol()
+
+    // obj[name] = "tiechui"
+
+
+    // console.log(obj[name])
+    // console.log(obj.name)
+
+      let keys = {
+        name:Symbol(),
+        age:Symbol(),
+        location:Symbol(),
+        test:Symbol()
+      }
+      let obj ={
+        [keys.name]:"kerwin",
+        [keys.age]:100,
+        [keys.location]:"dalian",
+        [keys.test](){
+          console.log("test")
+        }
+      }
+
+      console.log(obj[keys.name])
+      // obj[keys.test]()
+
+
+
+      obj.name = "aaaaaaa"
+
+      console.log(obj)
+  </script>
+</body>
+
+</html>

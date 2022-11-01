@@ -1,0 +1,54 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ajax(url){
+            return new Promise((resolve,reject)=>{
+                let xhr = new XMLHttpRequest()
+                xhr.open("get",url,true)
+                xhr.send()
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState===4){
+                        if(xhr.status>=200&&xhr.status<300){
+                            resolve(JSON.parse(xhr.responseText))
+                        }else{
+                            reject(xhr.responseText)
+                        }
+                    }
+                }
+            })
+        }
+
+        // async function test(){
+        //     let res = await ajax("1.json")
+        //     console.log(res)
+        //     let res2 = await ajax("2.json")
+        //     console.log(res2)
+
+        //     //promise.all 
+        // }
+        // test()
+
+        async function test(){
+            console.log("show loading")
+            let res = await Promise.all([ajax("1.json"),ajax("2.json")])
+            console.log(res)
+
+            console.log("hide loading")
+            // let res2 = await ajax("2.json")
+            // console.log(res2)
+
+            //promise.all 
+        }
+        test()
+    </script>
+</body>
+</html>

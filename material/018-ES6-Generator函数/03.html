@@ -1,0 +1,40 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function *gen(){
+          
+            let res1 = yield "aaa"//产出
+            console.log("gen内部",res1)
+            let res2 = yield "bbb"
+            console.log("gen内部",res2)
+        }
+
+        let g = gen()
+
+        let res1 = g.next("传入-11111")
+        console.log(res1)
+        let res2 = g.next("传入-22222")
+        console.log(res2)
+
+        let res3 = g.next("传入-33333")
+
+        console.log(res3)
+
+        // for(let i of g){
+        //     console.log(i)
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+
+    </ul>
+    <script>
+        class Person{
+            constructor(name,age,id){
+                this.name = name;
+                this.age = age;
+                // this.location = location
+                this.ele = document.querySelector(`#${id}`)
+            }
+
+            get location(){
+                console.log("get")
+            }
+
+            set location(data){
+                console.log("set",data)
+            }
+
+            get html(){
+                return this.ele.innerHTML
+            }
+
+            set html(data){
+                this.ele.innerHTML = data.map(item=>`<li>${item}</li>`).join("")
+            }
+        }
+
+        let obj = new Person("kerwin",100,"list")
+
+        
+        // obj.html = ["111","222","333"]
+        // obj.html
+    </script>
+</body>
+</html>

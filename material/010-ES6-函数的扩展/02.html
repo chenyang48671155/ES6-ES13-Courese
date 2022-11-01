@@ -1,0 +1,57 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        
+    </ul>
+    <script>
+        //箭头函数：写法简洁
+
+        let test = item=>"1111111111111"
+
+        console.log(test())
+
+
+        
+
+        //1 只有return 可以省略
+        //2. 如果返回对象需要注意
+
+        let test2 = ()=>({
+                name:"kerwin",
+                age:100
+        })
+
+        console.log(test2())
+
+        //3.如果只有一个参数， 可以省略（）
+        let arr = ["aaa","bbb","ccc"]
+
+        let newarr = arr.map(item=>`<li>${item}</li>`)
+        let newarr2 = arr.map((item,index)=>`<li>${item}-${index}</li>`)
+
+        console.log(newarr,newarr2)
+
+
+        //4. 无法访问arguments, 无法new
+
+        let test3 = ()=>{
+            // console.log(arguments)
+        }
+
+        // test3(1,2,3,4)
+        new test3()
+
+        //5 .箭头没有this, 
+        //  this指向父作用域
+    </script>
+</body>
+</html>

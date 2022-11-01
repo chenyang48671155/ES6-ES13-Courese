@@ -1,0 +1,51 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       // Promise.all
+
+       //Promise.race
+
+       //Promise.allSettled
+
+
+        // Promise.any  // some
+       //登录-会员联盟系统（沃尔玛， 华润万家，盒马）
+
+
+       let ajax1 = function(){
+           return new Promise((resolve,reject)=>{
+               reject("沃尔玛")
+           })
+       }
+       let ajax2 = function(){
+           return new Promise((resolve,reject)=>{
+            reject("华润万家")
+           })
+       }
+       let ajax3 = function(){
+           return new Promise((resolve,reject)=>{
+            reject("盒马")
+           })
+       }
+
+
+       Promise.any([ajax1(),ajax2(),ajax3()]).then(res=>{
+           console.log(res)
+       }).catch(err=>{
+           console.log("err",err)
+       })
+    </script>
+</body>
+
+</html>

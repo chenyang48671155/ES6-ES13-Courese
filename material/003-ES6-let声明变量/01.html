@@ -1,0 +1,46 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <ul>
+       <li>11111</li>
+       <li>2222</li>
+       <li>3333</li>
+   </ul>
+    <script>
+        //1-块级作用域
+        // if(true){
+        //     var i =100;
+        // }
+
+        // console.log(i)
+        // for(let i=0;i<5;i++){
+
+        // }
+
+        // console.log(i)
+
+        var oli = document.querySelectorAll("ul li")
+        // for(var i=0;i<oli.length;i++){
+        //     oli[i].index= i;
+        //     oli[i].onclick  =function(){
+        //         // console.log(i)
+        //         console.log(this.index)
+        //     }
+        // }
+
+        for(let i=0;i<oli.length;i++){
+            oli[i].onclick  =function(){
+                console.log(i)
+            }
+        }
+    </script>
+</body>
+</html>

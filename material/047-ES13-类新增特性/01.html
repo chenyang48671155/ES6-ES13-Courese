@@ -1,0 +1,116 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    //    class Person{
+    //        state = {
+    //            a:1,
+    //            b:2
+    //        }
+    //        a = 1;
+    //        b = 2;
+    //        constructor(name,age){
+    //            this.name = name
+    //            this.age = age
+    //         //    this.state = {
+    //         //        a:1,
+    //         //        b:2
+    //         //    }
+    //        }
+    //    }
+
+    //    let obj = new Person("kerwin",100)
+    //    console.log(obj)
+
+        //private
+        // class Cache{
+
+        //     static #count = 0
+
+        //     static #getCount(){
+        //         return this.#count
+        //     }
+
+        //     #obj = {}
+
+        //     get(key){
+        //         return this.#obj[key]
+        //     }
+        //     set(key,value){
+        //         this.#obj[key] = value
+        //     }
+
+        //     #prstore(){
+
+        //     }
+        // }
+        
+
+        // let store = new Cache()
+
+        // store.set("name","kerwin")
+        // store.set("age",100)
+
+        // console.log(store)
+
+
+            
+        // class Cache {
+        //     static obj = new Map()
+        //     static {
+        //         this.obj.set("name","kerwin")
+        //         this.obj.set("age",100)
+        //     }
+
+        //     static{
+        //         console.log(this.obj)
+        //     }
+
+
+        // }
+
+          class Cache{
+
+            static #count = 0
+
+            static #getCount(){
+                return this.#count
+            }
+
+            #obj = {}
+
+            a  = 1
+
+            get(key){
+                return this.#obj[key]
+            }
+            set(key,value){
+                this.#obj[key] = value
+            }
+
+            #prstore(){
+
+            }
+
+            hasObj(){
+                return #obj in this
+            }
+        }
+
+        let store = new Cache()
+
+        console.log(store.hasObj())
+    </script>
+</body>
+
+</html>

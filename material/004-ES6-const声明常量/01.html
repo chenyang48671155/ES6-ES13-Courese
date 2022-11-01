@@ -1,0 +1,49 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. 常量
+        // const myname = "kerwin"
+        // myname = "tiechui"
+        
+        // kerwinwarn("dwdwadwadwadwadwadwadwadwadwadwadwadwadwa")
+
+        //2，不能重复定义
+        // const myname = "tiehcui"
+
+        //3. 块级
+        // {
+        //     const myname = "kerwin"
+        // }
+        // console.log(myname)
+
+        //4 声明不提升
+
+        const myname ="kerwin"
+
+        function test(){
+            // console.log(myname)
+            const myname = "tiechui"
+        }
+
+        test()
+
+        //5. 不与顶层对象挂钩
+
+        const myage = 100
+
+        console.log(window.myage)
+
+
+        
+    </script>
+</body>
+</html>
